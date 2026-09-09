@@ -1,1 +1,0 @@
-{"root":["./src/App.tsx","./src/api.ts","./src/main.tsx","./src/types.ts","./src/vite-env.d.ts","./src/components/ActivityFeed.tsx","./src/components/EchoCard.tsx","./src/components/MetricCard.tsx","./src/components/StatusPanel.tsx","./src/hooks/useAsync.ts"],"version":"5.7.3"}
