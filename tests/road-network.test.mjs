@@ -1,0 +1,4 @@
+import test from 'node:test'; import assert from 'node:assert/strict';
+const edges=[['airport','west'],['west','park'],['park','center'],['center','xinyi'],['xinyi','tower'],['west','northwest'],['northwest','north'],['north','station'],['station','east'],['east','hotel'],['park','north'],['center','station'],['xinyi','east'],['tower','hotel']];
+test('road graph is connected',()=>{const seen=new Set(['airport']);for(let changed=true;changed;){changed=false;for(const [a,b] of edges){if(seen.has(a)&&!seen.has(b)){seen.add(b);changed=true}if(seen.has(b)&&!seen.has(a)){seen.add(a);changed=true}}}assert.equal(seen.size,11)});
+test('7-seater contract is explicit',async()=>{const source=await import('node:fs/promises').then(fs=>fs.readFile('src/lib/catalog.ts','utf8'));assert.match(source,/name:'7-Seater'.*seats:7, bags:4/)});
